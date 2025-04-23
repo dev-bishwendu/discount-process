@@ -14,6 +14,6 @@ calculate.addEventListener ("click", function() {
         result.innerText = "Total Price: $" + discountedPrice + " (20% discount applied)";
     } else {
         result.innerText = `Total Price: $  ${totalPrice}  
-        if you buy more than 500 units, you will get a 20% discount;` 
+        if you buy more than 500 units, you will get a 20% discount!`; 
     } 
 });
