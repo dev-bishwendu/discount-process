@@ -3,10 +3,17 @@ let pricePerUnit = document.getElementById("pricePerUnit");
 let calculate = document.getElementById("calculate");
 let result = document.getElementById("result");
 
-if (amount>= 500) {
-    calculate.addEventListener("click", function() {
-        let totalPrice = amount*pricePerUnit.tofixed(2);
-        let discountedPrice = totalPrice - (totalPrice * 20)/100;
-        result.innerText = "Total Price: $" + discountedPrice.toFixed(2);
-    });
-}
+calculate.addEventListener ("click", function() {
+    console.log("Button clicked");
+    let amountValue = amount.value;
+    let pricePerUnitValue = pricePerUnit.value;
+    let totalPrice = amountValue * pricePerUnitValue;
+
+    if (amountValue >= 500) {
+        let discountedPrice = totalPrice - (totalPrice*20)/100
+        result.innerText = "Total Price: $" + discountedPrice + " (20% discount applied)";
+    } else {
+        result.innerText = `Total Price: $  ${totalPrice}  
+        if you buy more than 500 units, you will get a 20% discount;` 
+    } 
+});
